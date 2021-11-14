@@ -33,10 +33,10 @@ public class MainActivity extends FragmentActivity {
         fragmentTransaction.commit();
     }
 
-    @Override
-    public void onConfigurationChanged(@NonNull Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        if (newConfig.orientation == ORIENTATION_LANDSCAPE) setContentView(R.layout.activity_main_landscape);
-        else setContentView(R.layout.activity_main_portrait);
-    }
+//    @Override
+//    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//        if (newConfig.orientation == ORIENTATION_LANDSCAPE) setContentView(R.layout.activity_main_landscape);
+//        else setContentView(R.layout.activity_main_portrait);
+//    }
 }

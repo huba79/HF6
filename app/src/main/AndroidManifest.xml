@@ -11,6 +11,7 @@
         android:theme="@style/Theme.HF6">
         <activity
             android:name=".CurrencyDetailActivity"
+            android:configChanges="orientation"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

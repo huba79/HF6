@@ -2,7 +2,6 @@ package com.example.hf6;
 
 import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,8 +24,7 @@ public class CurrenciesFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         Context c = getActivity().getApplicationContext();
-        View vw = inflater.inflate(R.layout.fragment_currencies, container, false);
-
+        View vw = inflater.inflate(R.layout.fragment_currencies_list, container, false);
 
         ListView currencyList = (ListView) vw.findViewById(R.id.currencyListViewID);
         ArrayList<Currency> currencies = prepareCurrencyList();
@@ -36,12 +33,12 @@ public class CurrenciesFragment extends Fragment {
         currencyList.setAdapter(currencyListAdapter);
         Log.d("currencies",currencies.toString());
 
-        final FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getFragmentManager();
         currencyList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id)
             {
-                CurrencyFragment fragment  = (CurrencyFragment)fragmentManager.findFragmentByTag("currencyFragment");
+              CurrencyFragment fragment  = (CurrencyFragment)fragmentManager.findFragmentByTag("currencyFragment");
 
                 int orientation = getResources().getConfiguration().orientation;
                 if (orientation == ORIENTATION_LANDSCAPE){

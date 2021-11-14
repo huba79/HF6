@@ -1,9 +1,7 @@
 package com.example.hf6;
 
 
-import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +15,8 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class CurrencyListViewAdapter extends ArrayAdapter<Currency> {
-    //to reference the Activity
-    private final Context context;
+
+    private Context context;
     private ArrayList<Currency> currencies;
 
     public CurrencyListViewAdapter(Context context, ArrayList<Currency> pCurrencies){
@@ -32,7 +30,7 @@ public class CurrencyListViewAdapter extends ArrayAdapter<Currency> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View rowView = convertView;
         if(rowView == null)
-            rowView = LayoutInflater.from(context).inflate(R.layout.currency_line,parent,false);
+            rowView = LayoutInflater.from(context).inflate(R.layout.currency_list_item,parent,false);
 
         Currency currency = currencies.get(position);
 

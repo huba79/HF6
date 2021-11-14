@@ -9,14 +9,12 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/landscapeCurrenciesFragmentViewID"
-        android:name="com.example.hf6.CurrenciesFragment"
         android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/landscapeCurrencyFragmentViewID"
-        android:name="com.example.hf6.CurrencyFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
