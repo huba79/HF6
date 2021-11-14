@@ -24,10 +24,14 @@ public class MainActivity extends FragmentActivity {
 
         if (orientation == ORIENTATION_LANDSCAPE){ //==2
             Log.d("screenorientation","screenorientation:ORIENTATION_LANDSCAPE, setting the 2 fragments");
-            fragmentTransaction.add(R.id.landscapeCurrenciesFragmentViewID,new CurrenciesFragment(),"currenciesFragment");
-            fragmentTransaction.add(R.id.landscapeCurrencyFragmentViewID,  CurrencyFragment.newInstance (null),"currencyFragment");
+            if(getSupportFragmentManager().findFragmentByTag("currenciesFragment")==null
+                    && getSupportFragmentManager().findFragmentByTag("currencyFragment")==null){
+                fragmentTransaction.add(R.id.landscapeCurrenciesFragmentViewID,new CurrenciesFragment(),"currenciesFragment");
+                fragmentTransaction.add(R.id.landscapeCurrencyFragmentViewID,  new CurrencyFragment(),"currencyFragment");
+            }
         } else {
             Log.d("screenorientation","screenorientation:NOT_LANDSCAPE, setting only list fragment");
+            if(getSupportFragmentManager().findFragmentByTag("currenciesFragment")==null)
                 fragmentTransaction.add(R.id.portraitCurrenciesFragmentViewID, new CurrenciesFragment(), "currenciesFragment");
         }
         fragmentTransaction.commit();

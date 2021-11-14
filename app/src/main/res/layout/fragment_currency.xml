@@ -70,30 +70,54 @@
             app:layout_constraintTop_toBottomOf="@+id/currencyCodeViewID" />
 
         <TextView
-            android:id="@+id/buyPriceDisplayID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:text="TextView"
-            android:textSize="16sp"
-            android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.63" />
-
-        <TextView
             android:id="@+id/sellPriceDisplayID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:text="TextView"
             android:textSize="16sp"
-            android:textStyle="normal"
+            android:textStyle="normal|bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.899" />
+            app:layout_constraintTop_toBottomOf="@+id/buyPriceDisplayID" />
+
+        <TextView
+            android:id="@+id/buyPriceDisplayID3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="TextView"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/buyPriceDisplayID2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/buyPriceDisplayID2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="TextView"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/buyPriceDisplayID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buyPriceDisplayID3" />
+
+        <TextView
+            android:id="@+id/buyPriceDisplayID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="TextView"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toTopOf="@+id/sellPriceDisplayID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buyPriceDisplayID2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
